@@ -65,7 +65,7 @@ jobs:
       - name: Check out anchor (pinned)
         uses: actions/checkout@v4
         with:
-          repository: alehatsman/anchor
+          repository: aleh-op/anchor
           ref: c755628bdf1515b2d10dab01a149e63a34eee33a
           path: anchor
       - name: Build anchord
@@ -75,7 +75,7 @@ jobs:
         run: echo "ANCHORD_BIN=$GITHUB_WORKSPACE/anchor/target/release/anchord" >> "$GITHUB_ENV"
 
       - name: Install provision
-        run: cargo install --locked --git https://github.com/alehatsman/provision.git
+        run: cargo install --locked --git https://github.com/aleh-op/provision.git
       # Checks out rust-quality at the pin in tasks/tools.yml and installs
       # nextest, deny and machete.
       - name: Install the gate's tools
@@ -130,7 +130,7 @@ jobs:
         if: runner.os != 'Windows'
         uses: actions/checkout@v4
         with:
-          repository: alehatsman/anchor
+          repository: aleh-op/anchor
           ref: c755628bdf1515b2d10dab01a149e63a34eee33a
           path: anchor
       # Windows has its own pin: the first anchor commit whose anchord serves
@@ -142,7 +142,7 @@ jobs:
         if: runner.os == 'Windows'
         uses: actions/checkout@v4
         with:
-          repository: alehatsman/anchor
+          repository: aleh-op/anchor
           ref: 972a6df41898b06b2c331e8ca337adbf892922eb
           path: anchor
       # Both binaries: on Windows a fixture starts anchord as
